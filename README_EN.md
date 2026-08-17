@@ -66,21 +66,30 @@ This Skill does not produce UI cards, generic filters, or template collages. It 
 
 ## 11 Style Programs
 
-| ID | Style | Best semantic fit | Intensity |
-| --- | --- | --- | --- |
-| `S01` | Blue Exposure Laboratory | Architecture, streets, stacked facades, cyanotype exposure depth | Medium |
-| `S02` | Optical Field Array | Strong perspective, repeated lines, roads, cables, structural rhythm | Medium–high |
-| `S03` | EdgeLoom Effect Sampler | Heterogeneous detail, experimental editorial energy, varied local textures | High |
-| `S04` | Quiet Effect Cabinet | Quiet isolated subjects, refined materials, abundant negative space | Low |
-| `S05` | Ink Grid Interference | Man-made geometry, grids, facades, technical drawing | Medium |
-| `S06` | Cyanotype Optical Plates | Layered architecture, asymmetric cyanotype plates, translucent overprinting | Medium |
-| `S07` | Registration Weather | Fog, rain, clouds, sky, changing light | Low–medium |
-| `S08` | Material Tectonics | Multiple materials, structural layers, complex surfaces; general default | Medium–high |
-| `S09` | Monochrome Data Garden | Plants, wind, particles, organic growth, soft motion | Medium |
-| `S10` | Selected Synthesis | Organic curves set against architectural lines | Medium–high |
-| `S11` | Cyanotype Ma Registry | Centered or symmetric subjects, quiet edges, spatial silence | Low |
+The same pagoda is used as a controlled test subject, making the visual differences between all 11 programs easy to compare. Click any image to open the full-resolution result.
 
-To choose visually, download the repository and open [`references/style-catalog.html`](references/style-catalog.html). Each card includes its ID, name, semantic fit, visual intensity, and reference image. Split references focus on the lower design region by default while still allowing the complete source to be opened.
+<table>
+  <tr>
+    <td width="33%" valign="top"><a href="assets/style-references/pagoda-full/R-S01-C-pagoda-full.png"><img src="assets/style-references/pagoda-full/R-S01-C-pagoda-full.png" alt="S01 Blue Exposure Laboratory pagoda example" width="100%"></a><br><strong>S01 · Blue Exposure Laboratory</strong><br><sub>Architecture, streets, stacked facades, cyanotype exposure depth · Medium</sub></td>
+    <td width="33%" valign="top"><a href="assets/style-references/pagoda-full/R-S02-C-pagoda-full.png"><img src="assets/style-references/pagoda-full/R-S02-C-pagoda-full.png" alt="S02 Optical Field Array pagoda example" width="100%"></a><br><strong>S02 · Optical Field Array</strong><br><sub>Strong perspective, repeated lines, roads, cables, structural rhythm · Medium–high</sub></td>
+    <td width="33%" valign="top"><a href="assets/style-references/pagoda-full/R-S03-C-pagoda-full.png"><img src="assets/style-references/pagoda-full/R-S03-C-pagoda-full.png" alt="S03 EdgeLoom Effect Sampler pagoda example" width="100%"></a><br><strong>S03 · EdgeLoom Effect Sampler</strong><br><sub>Heterogeneous detail, experimental editorial energy, varied local textures · High</sub></td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top"><a href="assets/style-references/pagoda-full/R-S04-C-pagoda-full.png"><img src="assets/style-references/pagoda-full/R-S04-C-pagoda-full.png" alt="S04 Quiet Effect Cabinet pagoda example" width="100%"></a><br><strong>S04 · Quiet Effect Cabinet</strong><br><sub>Quiet isolated subjects, refined materials, abundant negative space · Low</sub></td>
+    <td width="33%" valign="top"><a href="assets/style-references/pagoda-full/R-S05-C-pagoda-full.png"><img src="assets/style-references/pagoda-full/R-S05-C-pagoda-full.png" alt="S05 Ink Grid Interference pagoda example" width="100%"></a><br><strong>S05 · Ink Grid Interference</strong><br><sub>Man-made geometry, grids, facades, technical drawing · Medium</sub></td>
+    <td width="33%" valign="top"><a href="assets/style-references/pagoda-full/R-S06-C-pagoda-full.png"><img src="assets/style-references/pagoda-full/R-S06-C-pagoda-full.png" alt="S06 Cyanotype Optical Plates pagoda example" width="100%"></a><br><strong>S06 · Cyanotype Optical Plates</strong><br><sub>Layered architecture, asymmetric cyanotype plates, translucent overprinting · Medium</sub></td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top"><a href="assets/style-references/pagoda-full/R-S07-C-pagoda-full.png"><img src="assets/style-references/pagoda-full/R-S07-C-pagoda-full.png" alt="S07 Registration Weather pagoda example" width="100%"></a><br><strong>S07 · Registration Weather</strong><br><sub>Fog, rain, clouds, sky, changing light · Low–medium</sub></td>
+    <td width="33%" valign="top"><a href="assets/style-references/pagoda-full/R-S08-C-pagoda-full.png"><img src="assets/style-references/pagoda-full/R-S08-C-pagoda-full.png" alt="S08 Material Tectonics pagoda example" width="100%"></a><br><strong>S08 · Material Tectonics</strong><br><sub>Multiple materials, structural layers, complex surfaces; general default · Medium–high</sub></td>
+    <td width="33%" valign="top"><a href="assets/style-references/pagoda-full/R-S09-C-pagoda-full.png"><img src="assets/style-references/pagoda-full/R-S09-C-pagoda-full.png" alt="S09 Monochrome Data Garden pagoda example" width="100%"></a><br><strong>S09 · Monochrome Data Garden</strong><br><sub>Plants, wind, particles, organic growth, soft motion · Medium</sub></td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top"><a href="assets/style-references/pagoda-full/R-S10-C-pagoda-full.png"><img src="assets/style-references/pagoda-full/R-S10-C-pagoda-full.png" alt="S10 Selected Synthesis pagoda example" width="100%"></a><br><strong>S10 · Selected Synthesis</strong><br><sub>Organic curves set against architectural lines · Medium–high</sub></td>
+    <td width="33%" valign="top"><a href="assets/style-references/pagoda-full/R-S11-C-pagoda-full.png"><img src="assets/style-references/pagoda-full/R-S11-C-pagoda-full.png" alt="S11 Cyanotype Ma Registry pagoda example" width="100%"></a><br><strong>S11 · Cyanotype Ma Registry</strong><br><sub>Centered or symmetric subjects, quiet edges, spatial silence · Low</sub></td>
+    <td width="33%" valign="middle" align="center"><strong>Explore More References</strong><br><br><a href="references/style-catalog.html">Open the complete style catalog →</a><br><br><sub>Browse Full, Split 1:1, and multi-subject reference sets.</sub></td>
+  </tr>
+</table>
 
 ## Semantic Selection Logic
 
