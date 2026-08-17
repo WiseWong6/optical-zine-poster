@@ -104,8 +104,20 @@ Every delivery names the selected style and gives one concrete reason tied to th
 
 - Codex Desktop, or another Codex environment with the host-provided `image_gen.imagegen` tool;
 - at least one accessible source image;
-- Python 3, used only for local asset and output-ratio validation;
+- Python 3, used for MPO input normalization, local asset validation, and output-ratio validation;
 - no third-party image API key required.
+
+### MPO Sources
+
+`.mpo` multi-picture JPEG files are supported as source containers. Frame `0`, the primary image, is extracted by default. Inspect the frame list or choose another frame with:
+
+```bash
+python3 scripts/extract_mpo.py /absolute/path/to/source.mpo --list
+python3 scripts/extract_mpo.py /absolute/path/to/source.mpo \
+  --frame 0 --output /absolute/path/to/source-primary.jpg
+```
+
+Extraction only normalizes the input container; it does not generate or rewrite source content. Final posters remain ordinary 3:4 PNG outputs, and left/right stereo views are not merged into invented depth semantics automatically.
 
 ### Image-Generation Boundary
 

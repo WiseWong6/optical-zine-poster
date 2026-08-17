@@ -104,8 +104,20 @@ Optical Zine Poster 是一个为 Codex 封装的图像生成 Skill。它可以�
 
 - Codex 桌面端或具备宿主内置 `image_gen.imagegen` 的 Codex 环境；
 - 至少一张可访问的源图；
-- Python 3，仅用于本地资产与输出比例校验；
+- Python 3，用于 MPO 输入归一化、本地资产与输出比例校验；
 - 无需配置第三方图片 API Key。
+
+### MPO 源图
+
+支持 `.mpo` 多图 JPEG 作为源图输入。默认抽取第 `0` 帧，也就是主图；如果需要查看帧数量或选择其他帧，可以先运行：
+
+```bash
+python3 scripts/extract_mpo.py /absolute/path/to/source.mpo --list
+python3 scripts/extract_mpo.py /absolute/path/to/source.mpo \
+  --frame 0 --output /absolute/path/to/source-primary.jpg
+```
+
+抽取只是输入容器归一化，不会生成或改写源图内容。最终海报仍按现有规则输出普通 PNG 3:4；不会自动把左右眼图合成为新的立体语义。
 
 ### 图片生成边界
 

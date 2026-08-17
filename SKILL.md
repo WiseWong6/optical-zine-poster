@@ -14,6 +14,14 @@ Generate each final poster from the original source image in one image-generatio
 - If the built-in tool is unavailable or fails, stop and report the blocking reason.
 - Treat style reference images as browse-only. Never pass them to image generation.
 
+## MPO source normalization
+
+- `.mpo` is an accepted source container. MPO is normalized before generation; it is not a new poster output mode.
+- Inspect frames with `python3 scripts/extract_mpo.py <source.mpo> --list`.
+- Unless the user chooses another frame, extract frame `0`, the primary JPEG, and use that normalized JPEG as the only image input to `image_gen.imagegen`.
+- Do not merge stereo frames or invent depth semantics. If the user asks for left/right or multi-view treatment, clarify the selected frame before generation.
+- This local extraction step only unwraps the source container. It does not generate, alter, crop or stylize image content.
+
 ## Generate the default full poster
 
 1. Require one source image. If it is a local file, inspect it with `view_image` before generation.
