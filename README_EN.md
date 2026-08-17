@@ -28,7 +28,7 @@ It reads the source image's subject structure, perspective, materials, atmospher
     <th width="50%">Optional Split 1:1 · S08</th>
   </tr>
   <tr>
-    <td><img src="assets/examples/E01-FULL-S08-material-tectonics.png" alt="S08 full design example"></td>
+    <td><img src="assets/style-references/tokyo-tower-full/R-S08-A-material-tectonics-full.png" alt="S08 full design example"></td>
     <td><img src="assets/examples/E01-SPLIT-S08-material-tectonics.png" alt="S08 split example"></td>
   </tr>
   <tr>
@@ -61,7 +61,7 @@ This Skill does not produce UI cards, generic filters, or template collages. It 
 
 ## 11 Style Programs
 
-This page uses Full Design results from the same Tokyo Tower source image, making the visual differences between all 11 programs easy to compare. Click any image to open the full-resolution result; the [local style catalog](references/style-catalog.html) also provides `1:1 split` references for the same programs, and contains only these two reference families.
+This page uses newly generated Full Design results from the same Tokyo Tower source image, making the visual differences between all 11 programs easy to compare. Every current full reference follows the same carrier contract: 3–6 visible optical carriers, no more than two clusters, a continuous subject corridor, and at least 40% quiet paper. Click any image to open the full-resolution result; the [local style catalog](references/style-catalog.html) also provides `1:1 split` references for the same programs, and contains only these two reference families.
 
 <table>
   <tr>

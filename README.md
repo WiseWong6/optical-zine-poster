@@ -28,7 +28,7 @@ Optical Zine Poster 是一个为 Codex 封装的图像生成 Skill。它可以�
     <th width="50%">可选 Split 1:1 · S08</th>
   </tr>
   <tr>
-    <td><img src="assets/examples/E01-FULL-S08-material-tectonics.png" alt="S08 full design example"></td>
+    <td><img src="assets/style-references/tokyo-tower-full/R-S08-A-material-tectonics-full.png" alt="S08 full design example"></td>
     <td><img src="assets/examples/E01-SPLIT-S08-material-tectonics.png" alt="S08 split example"></td>
   </tr>
   <tr>
@@ -61,7 +61,7 @@ Optical Zine Poster 是一个为 Codex 封装的图像生成 Skill。它可以�
 
 ## 11 套风格程序
 
-本页使用同一张东京铁塔原图的 Full Design 成果，方便直接比较 11 套风格的视觉差异。点击图片可查看原尺寸成图；[本地风格图册](references/style-catalog.html) 另外提供同一套风格的 `1:1 split` 参考，图册只保留这两组参考。
+本页使用同一张东京铁塔原图重新生成的 Full Design 成果，方便直接比较 11 套风格的视觉差异。当前全图参考统一采用 3–6 个可见光学载体、最多两组聚类、主体连续通道和至少 40% 留白的约束。点击图片可查看原尺寸成图；[本地风格图册](references/style-catalog.html) 另外提供同一套风格的 `1:1 split` 参考，图册只保留这两组参考。
 
 <table>
   <tr>
