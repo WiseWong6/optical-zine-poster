@@ -21,9 +21,7 @@
   <a href="references/style-catalog.html">Local Style Catalog</a>
 </p>
 
-Optical Zine Poster is an image-generation Skill built for Codex. It reads the subject structure, perspective, materials, atmosphere, motion, and negative-space needs of a source image, selects the best match from 11 visual programs, and directly generates a finished 3:4 poster.
-
-The default is not a photo-over-design comparison, nor a two-stage base-and-effects workflow. The first call uses the original image as the only image input and generates a complete full-page design in one pass. After delivery, the Skill asks whether you want the same style as an upper-photo/lower-design 1:1 split, or whether you would like to browse and try another style.
+Optical Zine Poster is an image-generation Skill built for Codex. It reads the subject structure, perspective, materials, atmosphere, motion, and negative-space needs of a source image, selects the most suitable style from 11 visual programs, and generates a complete 3:4 poster.
 
 ## Preview
 
@@ -226,6 +224,7 @@ Acceptance rules:
 
 - Image models may not render precise small text reliably, so the visual system never depends on long readable copy.
 - `validate_output.py` verifies exact ratio and basic image conditions, but the Split midpoint still requires a lightweight human check.
+- Split 1:1 cannot currently be guaranteed precisely by the image model; the actual upper/lower proportion depends on the source image dimensions.
 - Style references document choices; they are not model inputs. Passing one as a second image would break the Skill's traceable input boundary.
 - `R-S08-B` is a secondary 2:3 aesthetic reference. It may only appear in explicitly labeled non-delivery areas and is not a valid output sample.
 
