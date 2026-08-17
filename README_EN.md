@@ -61,7 +61,7 @@ This Skill does not produce UI cards, generic filters, or template collages. It 
 
 ## 11 Style Programs
 
-The same Tokyo Tower source image is used as a controlled test subject, making the visual differences between all 11 programs easy to compare. Click any image to open the full-resolution result.
+This page uses Full Design results from the same Tokyo Tower source image, making the visual differences between all 11 programs easy to compare. Click any image to open the full-resolution result; the [local style catalog](references/style-catalog.html) also provides `1:1 split` references for the same programs, and contains only these two reference families.
 
 <table>
   <tr>
