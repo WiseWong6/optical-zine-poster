@@ -78,7 +78,6 @@ def main() -> int:
         references = (
             ROOT / "assets/style-references/split-1x1" / f"R-{style_id}-A-{slug}-split.png",
             ROOT / "assets/style-references/tokyo-tower-full" / f"R-{style_id}-A-{slug}-full.png",
-            ROOT / "assets/style-references/pagoda-full" / f"R-{style_id}-C-pagoda-full.png",
         )
         for image in references:
             require(image.is_file(), f"missing style reference: {image}", errors)
@@ -125,8 +124,6 @@ def main() -> int:
         require(catalog.count(f'id: "{style_id}"') == 1, f"catalog data missing or duplicates {style_id}", errors)
     require('id="split-1x1"' in catalog, "catalog missing split 1:1 section", errors)
     require('id="tokyo-tower-full"' in catalog, "catalog missing Tokyo Tower full section", errors)
-    require('id="pagoda-full"' in catalog, "catalog missing pagoda full section", errors)
-    require((ROOT / "assets/style-references/pagoda-full/README.md").is_file(), "missing pagoda provenance README", errors)
 
     secondary = ROOT / "assets/style-references/secondary/R-S08-B-material-tectonics-aesthetic-only-2x3.png"
     require(secondary.is_file(), "missing S08 aesthetic-only secondary reference", errors)
@@ -151,7 +148,7 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("PASS skill assets: 11 styles, 3 reference sections, templates, catalog links, and E01 case")
+    print("PASS skill assets: 11 styles, 2 reference sections, templates, catalog links, and E01 case")
     return 0
 
 

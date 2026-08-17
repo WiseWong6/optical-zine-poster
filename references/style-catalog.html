@@ -18,11 +18,10 @@
 </head>
 <body>
 <main>
-  <header><h1>OPTICAL<br>ZINE STYLES</h1><p>参考库分成三类：上图下设计的 1:1 分屏、东京铁塔全图，以及中式宝塔全图。点击任一卡片可打开完整 3:4 参考图；参考图只供浏览，不参与生图输入。</p></header>
-  <nav><a href="#split-1x1">1:1 分屏</a><a href="#tokyo-tower-full">东京铁塔 · 全图</a><a href="#pagoda-full">中式宝塔 · 全图</a></nav>
+  <header><h1>OPTICAL<br>ZINE STYLES</h1><p>参考库分成两类：上图下设计的 1:1 分屏，以及东京铁塔全图。点击任一卡片可打开完整 3:4 参考图；参考图只供浏览，不参与生图输入。</p></header>
+  <nav><a href="#split-1x1">1:1 分屏</a><a href="#tokyo-tower-full">东京铁塔 · 全图</a></nav>
   <section class="collection split" id="split-1x1"><div class="collection-head"><div><p class="eyebrow">Collection A · split 1:1</p><h2>上图摄影 / 下图设计</h2></div><p class="intro">用于明确要求上下 1:1 的变体。卡片缩略图聚焦下半设计区，点击后查看完整分屏。</p></div><div class="grid" data-gallery="split"></div></section>
   <section class="collection full" id="tokyo-tower-full"><div class="collection-head"><div><p class="eyebrow">Collection B · Tokyo Tower full design</p><h2>东京铁塔 / 全图设计</h2></div><p class="intro">S01–S11 全部以同一张东京铁塔原图为语义与结构源，整页完成设计转译，不保留摄影窗口，也不使用上下分屏。</p></div><div class="grid" data-gallery="full"></div></section>
-  <section class="collection full" id="pagoda-full"><div class="collection-head"><div><p class="eyebrow">Collection C · Pagoda full design</p><h2>中式宝塔 / 全图设计</h2></div><p class="intro">S01–S11 是同一中式宝塔主体的完整风格实验，用于比较不同效果程序在同一主体上的表现。</p></div><div class="grid" data-gallery="pagoda"></div></section>
   <div class="note"><strong>S08 次级参考：</strong><a href="../assets/style-references/secondary/R-S08-B-material-tectonics-aesthetic-only-2x3.png">R-S08-B</a> 仅用于审美方向，原图为 2:3，不得作为 3:4 交付验收样本。</div>
 </main>
 <script>
@@ -41,18 +40,14 @@
   ];
   function card(style, mode) {
     const split = mode === "split";
-    const pagoda = mode === "pagoda";
-    const path = pagoda
-      ? `../assets/style-references/pagoda-full/R-${style.id}-C-pagoda-full.png`
-      : `../assets/style-references/${split ? "split-1x1" : "tokyo-tower-full"}/R-${style.id}-A-${style.slug}-${split ? "split" : "full"}.png`;
-    const accepted = split || pagoda || style.id !== "S06";
-    const ref = split ? "split 1:1 study" : pagoda ? "Pagoda · full design" : accepted ? "Tokyo Tower · full design" : "Tokyo Tower · full candidate · unaccepted 1086x1449";
+    const path = `../assets/style-references/${split ? "split-1x1" : "tokyo-tower-full"}/R-${style.id}-A-${style.slug}-${split ? "split" : "full"}.png`;
+    const accepted = split || style.id !== "S06";
+    const ref = split ? "split 1:1 study" : accepted ? "Tokyo Tower · full design" : "Tokyo Tower · full candidate · unaccepted 1086x1449";
     const level = accepted ? style.level : "未验收";
     return `<article class="card"><a class="media" href="${path}"><img src="${path}" alt="${style.id} ${style.name} ${ref}"></a><div class="copy"><div class="top"><h3>${style.id}</h3><span class="level">${level}</span></div><p class="name">${style.name}</p><p class="fit">${style.fit}</p><p class="ref">R-${style.id}-A · ${ref}</p></div></article>`;
   }
   document.querySelector('[data-gallery="split"]').innerHTML = styles.map(style => card(style, "split")).join("");
   document.querySelector('[data-gallery="full"]').innerHTML = styles.map(style => card(style, "full")).join("");
-  document.querySelector('[data-gallery="pagoda"]').innerHTML = styles.map(style => card(style, "pagoda")).join("");
 </script>
 </body>
 </html>
