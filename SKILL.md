@@ -24,7 +24,7 @@ Generate each final poster from the original source image in one image-generatio
 6. Save the selected image under the caller's current workspace at `outputs/optical-zine-poster/<source>-full-Sxx-vN.png`, unless the user supplied another destination. Never overwrite an existing file.
 7. Save the exact final prompt beside it as `<source>-full-Sxx-vN.prompt.md`.
 8. Run `python3 scripts/validate_output.py <image> --mode full`. If it fails, retry once from the original source with the same style and a stronger native 3:4 instruction. Never stretch or crop to hide a ratio failure. If the retry fails, report it as unaccepted.
-9. Perform only a lightweight check on the returned image: the subject remains recognizable, the whole page is designed, and no photographic window remains. Do not start a browser or create extra screenshots.
+9. Perform only a lightweight check on the returned image: the subject remains recognizable, the whole page is designed, no photographic window remains, and the full-mode carrier contract is visible—3–6 active regions, no more than two clusters, no isolated small rectangle, a continuous subject corridor and at least 40% quiet paper. Do not start a browser or create extra screenshots.
 10. Report the selected style ID and name, one concrete selection reason, image path, prompt path, validation result, and catalog path.
 
 After delivery, ask whether the user wants:
@@ -38,7 +38,7 @@ After delivery, ask whether the user wants:
 2. Reuse the selected style unless the user requests another `Sxx`.
 3. Read [prompt-split-1x1.md](references/prompt-split-1x1.md), insert exactly one style block, and make one fresh built-in image generation call.
 4. Save as `<source>-split-Sxx-vN.png` with a matching `.prompt.md` sidecar.
-5. Run `python3 scripts/validate_output.py <image> --mode split`. Check that the only horizontal boundary is visually at the midpoint; do not claim pixel-level boundary verification from dimensions alone.
+5. Run `python3 scripts/validate_output.py <image> --mode split`. Check that the only horizontal boundary is visually at the midpoint and that the lower half follows the carrier contract—3–6 active regions, no more than two clusters, no isolated small rectangle, a continuous subject corridor and at least 40% quiet paper. Do not claim pixel-level boundary verification from dimensions alone.
 
 ## Generate an alternate style
 
@@ -57,5 +57,5 @@ After delivery, ask whether the user wants:
 - Require an exact 3:4 pixel ratio.
 - Require one recognizable subject and coherent environment.
 - Reject empty cards, unrelated collage fragments, regular UI grids, mockups, logos, watermarks, and meaningless text.
-- For full mode, reject every photographic-looking area or split composition.
-- For split mode, require one midpoint boundary, faithful photography above, and complete design translation below.
+- For full mode, reject every photographic-looking area, split composition, result with more than six visibly bounded effect regions, evenly scattered panels, isolated small rectangles, or repeated framing across the primary subject.
+- For split mode, require one midpoint boundary, faithful photography above, complete design translation below, and reject more than six visibly bounded effect regions, evenly scattered panels, isolated small rectangles, or repeated framing across the lower-half subject.
