@@ -48,7 +48,7 @@ After delivery, ask whether the user wants:
 
 ## Browse styles
 
-- Direct the user to the absolute path of [style-catalog.html](references/style-catalog.html).
+- Direct the user to the absolute path of [style-catalog.html](references/style-catalog.html). The catalog is visibly divided into `1:1 split`, `Tokyo Tower · full design`, and `Pagoda · full design` references. All Tokyo Tower and pagoda cards must use full-design images.
 - Use [style-selection.md](references/style-selection.md) for semantic guidance and [style-programs.md](references/style-programs.md) only after a style is chosen.
 - Keep `R-S08-B` labeled aesthetic-only: it is 2:3 and is not a valid delivery reference.
 

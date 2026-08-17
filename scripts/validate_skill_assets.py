@@ -11,17 +11,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STYLES = {
-    "S01": ("Blue Exposure Laboratory", "R-S01-A-blue-exposure-laboratory-split.png"),
-    "S02": ("Optical Field Array", "R-S02-A-optical-field-array-split.png"),
-    "S03": ("EdgeLoom Effect Sampler", "R-S03-A-edgeloom-effect-sampler-split.png"),
-    "S04": ("Quiet Effect Cabinet", "R-S04-A-quiet-effect-cabinet-split.png"),
-    "S05": ("Ink Grid Interference", "R-S05-A-ink-grid-interference-split.png"),
-    "S06": ("Cyanotype Optical Plates", "R-S06-A-cyanotype-optical-plates-split.png"),
-    "S07": ("Registration Weather", "R-S07-A-registration-weather-split.png"),
-    "S08": ("Material Tectonics", "R-S08-A-material-tectonics-full.png"),
-    "S09": ("Monochrome Data Garden", "R-S09-A-monochrome-data-garden-split.png"),
-    "S10": ("Selected Synthesis", "R-S10-A-selected-synthesis-split.png"),
-    "S11": ("Cyanotype Ma Registry", "R-S11-A-cyanotype-ma-registry-split.png"),
+    "S01": ("Blue Exposure Laboratory", "blue-exposure-laboratory"),
+    "S02": ("Optical Field Array", "optical-field-array"),
+    "S03": ("EdgeLoom Effect Sampler", "edgeloom-effect-sampler"),
+    "S04": ("Quiet Effect Cabinet", "quiet-effect-cabinet"),
+    "S05": ("Ink Grid Interference", "ink-grid-interference"),
+    "S06": ("Cyanotype Optical Plates", "cyanotype-optical-plates"),
+    "S07": ("Registration Weather", "registration-weather"),
+    "S08": ("Material Tectonics", "material-tectonics"),
+    "S09": ("Monochrome Data Garden", "monochrome-data-garden"),
+    "S10": ("Selected Synthesis", "selected-synthesis"),
+    "S11": ("Cyanotype Ma Registry", "cyanotype-ma-registry"),
 }
 
 
@@ -72,14 +72,19 @@ def main() -> int:
     require(len(found_ids) == len(set(found_ids)), "duplicate style heading IDs", errors)
     require(set(found_ids) == set(STYLES), f"style heading set mismatch: {found_ids}", errors)
 
-    for style_id, (name, filename) in STYLES.items():
+    for style_id, (name, slug) in STYLES.items():
         require((style_id, name) in headings, f"heading mismatch for {style_id} {name}", errors)
         require(programs.count(f"EFFECT PROGRAM — {style_id} ") == 1, f"{style_id} must have one effect program", errors)
-        image = ROOT / "assets/style-references" / filename
-        require(image.is_file(), f"missing primary reference: {image}", errors)
-        if image.is_file():
-            width, height = image_size(image)
-            require(width * 4 == height * 3, f"primary reference is not exact 3:4: {image} ({width}x{height})", errors)
+        references = (
+            ROOT / "assets/style-references/split-1x1" / f"R-{style_id}-A-{slug}-split.png",
+            ROOT / "assets/style-references/tokyo-tower-full" / f"R-{style_id}-A-{slug}-full.png",
+            ROOT / "assets/style-references/pagoda-full" / f"R-{style_id}-C-pagoda-full.png",
+        )
+        for image in references:
+            require(image.is_file(), f"missing style reference: {image}", errors)
+            if image.is_file():
+                width, height = image_size(image)
+                require(width * 4 == height * 3, f"style reference is not exact 3:4: {image} ({width}x{height})", errors)
 
     selection = (ROOT / "references/style-selection.md").read_text(encoding="utf-8")
     for style_id in STYLES:
@@ -107,11 +112,21 @@ def main() -> int:
     catalog_path = ROOT / "references/style-catalog.html"
     catalog = catalog_path.read_text(encoding="utf-8")
     links = re.findall(r"(?:src|href)=\"([^\"]+)\"", catalog)
-    local_links = [link for link in links if not re.match(r"^[a-z]+:", link)]
+    local_links = [
+        link
+        for link in links
+        if not re.match(r"^[a-z]+:", link)
+        and not link.startswith("#")
+        and "${" not in link
+    ]
     for link in local_links:
         require((catalog_path.parent / link).resolve().is_file(), f"broken catalog link: {link}", errors)
     for style_id in STYLES:
-        require(catalog.count(f">{style_id}<") == 1, f"catalog missing or duplicates card {style_id}", errors)
+        require(catalog.count(f'id: "{style_id}"') == 1, f"catalog data missing or duplicates {style_id}", errors)
+    require('id="split-1x1"' in catalog, "catalog missing split 1:1 section", errors)
+    require('id="tokyo-tower-full"' in catalog, "catalog missing Tokyo Tower full section", errors)
+    require('id="pagoda-full"' in catalog, "catalog missing pagoda full section", errors)
+    require((ROOT / "assets/style-references/pagoda-full/README.md").is_file(), "missing pagoda provenance README", errors)
 
     secondary = ROOT / "assets/style-references/secondary/R-S08-B-material-tectonics-aesthetic-only-2x3.png"
     require(secondary.is_file(), "missing S08 aesthetic-only secondary reference", errors)
@@ -136,7 +151,7 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("PASS skill assets: 11 styles, references, templates, catalog links, and E01 case")
+    print("PASS skill assets: 11 styles, 3 reference sections, templates, catalog links, and E01 case")
     return 0
 
 
