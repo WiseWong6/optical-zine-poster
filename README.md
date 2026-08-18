@@ -1,4 +1,4 @@
-# Blue Poster
+# Blue Poster · 蓝色光波
 
 <p align="center">
   <strong>简体中文</strong> · <a href="README_EN.md">English</a>
@@ -16,7 +16,7 @@
   <a href="references/style-catalog.html">本地风格图册</a>
 </p>
 
-Blue Poster 是一个为 Codex 封装的图像生成 Skill。它可以把一张原图，变成光学实验版画海报。
+Blue Poster（蓝色光波）是一个为 Codex 封装的图像生成 Skill。它可以把一张原图，变成光学实验版画海报。
 
 它会读取源图中的主体结构、透视、材质、氛围、动静关系与留白需求，从 11 套视觉程序中选择最合适的风格，生成一张完整的 3:4 视觉海报。
 
@@ -155,7 +155,7 @@ ln -s /path/to/blue-poster \
 
 ```text
 $blue-poster
-把这张图做成光学杂志海报。
+把这张图做成蓝色光波海报。
 ```
 
 ### 指定风格

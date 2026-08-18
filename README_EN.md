@@ -16,7 +16,7 @@
   <a href="references/style-catalog.html">Local Style Catalog</a>
 </p>
 
-Blue Poster is an image-generation Skill built for Codex. It can turn one source image into an optical experimental print poster.
+Blue Poster (蓝色光波) is an image-generation Skill built for Codex. It can turn one source image into an optical experimental print poster.
 
 It reads the source image's subject structure, perspective, materials, atmosphere, motion, and negative-space needs, selects the most suitable style from 11 visual programs, and generates a complete 3:4 poster.
 
